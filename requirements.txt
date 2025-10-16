@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+databases[postgresql]
+asyncpg
+pydantic
+python-dotenv
+passlib==1.7.4
+bcrypt==4.0.1
+python-jose[cryptography]
+pandas
+scikit-learn==1.6.1
+joblib
+google-generativeai
+python-multipart # Diperlukan untuk form login
+numpy
