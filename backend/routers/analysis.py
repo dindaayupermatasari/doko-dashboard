@@ -28,8 +28,8 @@ router = APIRouter(
 
 # --- Load Model AI saat startup ---
 try:
-    CLEANING_PIPELINE = joblib.load("app/models_ai/pipeline_cleaning.joblib")
-    PROXY_CLASSIFIER_PIPELINE = joblib.load("app/models_ai/proxy_classifier_pipeline_produk_budidaya.joblib")
+    CLEANING_PIPELINE = joblib.load("backend/models_ai/pipeline_cleaning.joblib")
+    PROXY_CLASSIFIER_PIPELINE = joblib.load("backend/models_ai/proxy_classifier_pipeline_produk_budidaya.joblib")
     print("✅ Model AI berhasil dimuat.")
 except FileNotFoundError:
     CLEANING_PIPELINE = None
