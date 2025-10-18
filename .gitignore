@@ -7,7 +7,7 @@ __pycache__/
 *.pyc
 
 # Models and binary files
-*.joblib
+#*.joblib
 
 # OS files
 .DS_Store
