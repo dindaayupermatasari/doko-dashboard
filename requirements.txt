@@ -11,5 +11,5 @@ pandas
 scikit-learn==1.6.1
 joblib
 google-generativeai
-python-multipart # Diperlukan untuk form login
+python-multipart 
 numpy

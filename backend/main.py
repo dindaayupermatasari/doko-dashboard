@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from dotenv import load_dotenv
 load_dotenv()
-from .database import connect_to_db, close_db_connection
+from .database import connect_to_db, close_db_connection, database
 from .routers import authentication, petani, dashboard, analysis
 
 app = FastAPI(
@@ -22,5 +22,13 @@ app.include_router(analysis.router)
 
 @app.get("/", tags=["Root"])
 async def read_root():
-    """Endpoint root untuk mengecek status API."""
     return {"message": "Selamat datang di API Smart Dashboard Kopi."}
+
+@app.get("/db-test", tags=["Database"])
+async def db_test():
+    try:
+        query = "SELECT 1;"
+        result = await database.fetch_one(query=query)
+        return {"status": "ok", "result": result[0]}
+    except Exception as e:
+        return {"status": "failed", "error": str(e)}
