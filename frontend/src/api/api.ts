@@ -1,0 +1,19 @@
+// api.ts (Kode yang Diperbaiki)
+
+import axios from "axios";
+
+// Buat koneksi default ke backend FastAPI
+const api = axios.create({
+  baseURL: "http://127.0.0.1:8000",
+});
+
+api.interceptors.request.use((config) => {
+    const token = localStorage.getItem("access_token"); 
+
+    if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+});
+
+export default api;
