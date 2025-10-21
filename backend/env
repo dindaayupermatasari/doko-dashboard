@@ -6,3 +6,4 @@ DB_NAME=postgres
 DB_USER=postgres.ldbcfntovrwzqyllcxga
 DB_PASSWORD=DatasciencePENS
 DB_POOL_MODE=transaction
+GOOGLE_API_KEY=<Input Your Gemini API KEY>
